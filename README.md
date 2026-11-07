@@ -5,8 +5,8 @@
 - **Név:** Koncz Anna Dorka
 - **Neptun kód:** TF7S03
 - **Szak / Képzés:** Programtervező informatikus BSc (ELTE IK)
-- **Bemutató videó linkje (OneDrive):** [Videó megtekintése]([https://...](https://konczdorka.github.io/Vasuti-Forgalomiranyito-Sim/))
-- **A futtatható program linkje (Vercel, Netlify, Firebase, stb.):**
+- **Bemutató videó linkje (OneDrive):** [Videó megtekintése](...)
+- **A futtatható program linkje (Vercel, Netlify, Firebase, stb.):** [Vasúti Forgalomirányító Szimulátor](https://konczdorka.github.io/Vasuti-Forgalomiranyito-Sim/)
 
 ---
 
