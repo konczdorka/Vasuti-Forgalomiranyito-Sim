@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vasúti Forgalomirányító és Váltóállomás Szimulátor</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="./js/app.js"></script>
+  </head>
+  <body>
+    <!-- MENU SCREEN -->
+    <main id="menu-screen">
+      <div class="card menu-card">
+        <h1>Vasúti Forgalomirányító Szimulátor</h1>
+
+        <div class="form-group">
+          <label for="name-entry">Felhasználónév (Kötelező):</label>
+          <input id="name-entry" type="text" placeholder="Add meg a neved..." />
+        </div>
+
+        <div class="form-group">
+          <label for="diffSelect">Pálya választása:</label>
+          <select id="diffSelect"></select>
+        </div>
+
+        <div class="menu-actions">
+          <button id="start-button" class="btn btn-primary">
+            Szimuláció Indítása
+          </button>
+          <button id="menu-load-button" class="btn btn-secondary">
+            Korábbi játékállás betöltése
+          </button>
+        </div>
+
+        <section class="rules-section">
+          <h3>Játékszabályzat és Irányítás</h3>
+          <p>
+            <b>Bal kattintás:</b> Váltó állítása ciklikusan | Fényjelzó
+            kapcsolása (zöld vagy piros)
+          </p>
+          <p><b>Jobb kattintás:</b> Vonat kézi vészfékezése / fék feloldása</p>
+          <p>
+            <b>Cél:</b> Minden vonatot juttass el a saját színének megfelelő
+            célperonra ütközés és kisiklás nélkül!
+          </p>
+        </section>
+
+        <section id="leaderboard-section">
+          <h3>Játékosok Dicsőségkönyve</h3>
+          <div id="leaderboard-container"></div>
+        </section>
+      </div>
+    </main>
+
+    <!-- GAME SCREEN -->
+    <main id="game-screen" class="hidden">
+      <header id="info-container"></header>
+
+      <nav id="controls-container">
+        <button id="resume-stop-button" class="btn">Szünet</button>
+        <button id="reset-button" class="btn btn-danger">Újraindítás</button>
+        <button id="save-button" class="btn btn-success">
+          Játékállás Mentése
+        </button>
+        <button id="load-button" class="btn btn-secondary">Betöltés</button>
+        <button id="back-to-menu" class="btn btn-outline">Főmenü</button>
+      </nav>
+
+      <canvas id="game-canvas" width="1024" height="530"></canvas>
+
+      <footer id="description">
+        Irányítás: <b>Bal kattintás:</b> Váltó állítása vagy Fényjelző
+        kapcsolása (Zöld/Piros). | <b>Jobb kattintás:</b> Vonat vészfékezése.<br />
+        Szabályzat: Állíts vörös jelzést, ha a vágány foglalt! A piros jelzőnél
+        várakozó vonat nem ütközik az előtte haladóval.
+      </footer>
+    </main>
+
+    <!-- MODAL NOTIF ABLAK (ütközés, játék vége, nyerés) -->
+    <div id="modal-overlay" class="hidden">
+      <div class="modal-card">
+        <h2 id="modal-title">Eredmény</h2>
+        <p id="modal-message"></p>
+        <button id="modal-close-btn" class="btn btn-primary">Rendben</button>
+      </div>
+    </div>
+  </body>
+</html>
